@@ -1,0 +1,24 @@
+.top-bar{
+    width: 100%;
+    height: 100px;
+    background-color: $background-top_bar-color;
+    color: $tittle-color; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__school img{
+        width: 95px;
+        height: 95px;
+    }
+    &__greeting{
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        font-size: 35px;
+    }
+    &__university img{
+        height: 90px;
+        transform: translateX(-10px);
+    }
+
+}
+

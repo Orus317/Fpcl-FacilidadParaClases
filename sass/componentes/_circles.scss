@@ -1,0 +1,190 @@
+.circle--container{
+    width: $circle-space;
+    height: $circle-space;
+    /* border-radius: 50%; */
+    /* outline: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle{
+    width: 274px;
+    height: 274px;
+    border-radius: 50%;
+    overflow: hidden;
+    // background-color: #1B2831;
+    transition: transform .2s ease-out;
+    position: relative;
+}
+.circle--container:hover .circle{
+    transform: rotateZ(-45deg);
+}
+.circle--teacher{
+    width: 100%;
+    height: 50%;
+    background-color: $cirlce-secondary-color;
+    position: absolute;
+    transition: transform .5s ease-out .2s;
+    z-index: 8;
+    figure{
+        margin: 0 auto;
+    width: 131px;
+    height: 131px;
+    }
+    img{
+        transform: translateY(10px); 
+        width: 131px;
+        height: 131px;
+    }
+}
+.circle--container:hover .circle--teacher{
+    transform: translateY(-120%);
+}
+.circle--teacher_description{
+    display: flex;
+    justify-content: center; 
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 137px;
+    background-color: $circle-main-color;
+    transition: transform .5s ease-out .2s;
+    z-index: 8;
+}
+.circle--container:hover .circle--teacher_description{
+    transform: translateY(120%);
+}
+.logo-container{
+    margin: 0;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    align-content: center;
+    transition: transform .2s ease-in-out;
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.meet img{
+    transition: all .3s ease-in-out;
+}
+.classroom{
+    top: 137px;
+    img{
+        transition: all .3s ease-in-out;
+    }
+}
+.circle--container:hover .logo-container {
+    transform: rotateZ(45deg) translate(10px, 10px);
+}   
+.ghost-for-meet{
+    top: 137px;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    z-index: 6;
+    border-radius:  0 0 137px 137px;
+    /* outline: 5px solid red; */
+}
+.circle--superior{
+    @include circle-flex;
+    background-color: $circle-main-color;
+    border-radius: 137px 137px 0 0;
+    transition: transform .3s ease-in-out;
+}
+.circle--inferior{
+    @include circle-flex;
+    top: 137px;
+    background-color: $cirlce-secondary-color;
+    border-radius:  0 0 137px 137px;
+    transition: all .3s ease-in-out;
+}
+/* Para anmimar la parte superior */
+.meet:hover{
+    transform: translateY(25px);
+    z-index: 7;
+}
+.meet:hover ~ .circle--superior{
+    transform: translateY(25px);
+    z-index: 4;
+}
+.meet:hover img{
+    transform: translate(40px, -5px)  scale(1.2);
+}
+.meet:hover ~ .circle--inferior{
+    transform: scale(.7);
+}
+.meet:hover ~ .classroom img{
+    transform: scale(.7);   
+    filter: blur(4px);
+}
+.meet:hover  .button-for-meet{
+    opacity: 1;
+    transform: translate(-20px, 90px) scale(1);
+}
+/*Para animar la parte inferior*/
+.ghost-for-meet:hover{
+    transform: translateY(-25px);
+}
+.ghost-for-meet:hover ~ .meet img{
+    transform: scale(.7);   
+    filter: blur(4px);
+}
+.ghost-for-meet:hover ~ .circle--inferior{
+    transform: translateY(-25px);
+    z-index: 4;
+}
+.ghost-for-meet:hover ~ .classroom img{
+    transform: translate(-40px, 5px)  scale(1.2);
+}
+.ghost-for-meet:hover ~ .circle--superior{
+    transform: scale(.7);
+}
+.ghost-for-meet:hover  .button-for-clasroom{
+    opacity: 1;
+    transform: rotateZ(45deg) translate(109px, -101px) scale(1);
+}
+/* .button-for-clasroom:hover ~ .circle--inferior{
+    transform: translateY(0);
+}
+.button-for-clasroom:hover ~ .classroom img{
+    transform: translateY(0);
+} */
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 201px;
+    height: 48px;
+    top: 25px;
+    border-radius: 20px;
+    background-color: $tittle-color;
+    font-size: 20px;
+    span{
+        display: inline-block;
+        text-align: center;
+    }
+    
+}   
+
+.button-for-meet{
+    @include inside-buttons;
+}
+.button-for-clasroom{
+    @include inside-buttons;
+    transform:translate(109px, -101px) scale(0);
+}
+.button a{
+    text-decoration: none;
+    color: $tittle-color;
+}
+.button:hover a{
+    color: $button-background-primary;
+}
+.button-for-meet:hover, .button-for-clasroom:hover{
+    background-color: #EFF3F5;
+    color: #5C5560;
+}

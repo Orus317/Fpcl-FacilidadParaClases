@@ -1,0 +1,288 @@
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1B2831;
+}
+
+.top-bar {
+  width: 100%;
+  height: 100px;
+  background-color: #23333F;
+  color: #EFF3F5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar__school img {
+  width: 95px;
+  height: 95px;
+}
+.top-bar__greeting {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+}
+.top-bar__university img {
+  height: 90px;
+  transform: translateX(-10px);
+}
+
+.circle--container {
+  width: 280px;
+  height: 280px;
+  /* border-radius: 50%; */
+  /* outline: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 274px;
+  height: 274px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.2s ease-out;
+  position: relative;
+}
+
+.circle--container:hover .circle {
+  transform: rotateZ(-45deg);
+}
+
+.circle--teacher {
+  width: 100%;
+  height: 50%;
+  background-color: #2A6E9E;
+  position: absolute;
+  transition: transform 0.5s ease-out 0.2s;
+  z-index: 8;
+}
+.circle--teacher figure {
+  margin: 0 auto;
+  width: 131px;
+  height: 131px;
+}
+.circle--teacher img {
+  transform: translateY(10px);
+  width: 131px;
+  height: 131px;
+}
+
+.circle--container:hover .circle--teacher {
+  transform: translateY(-120%);
+}
+
+.circle--teacher_description {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  top: 137px;
+  background-color: #255573;
+  transition: transform 0.5s ease-out 0.2s;
+  z-index: 8;
+}
+
+.circle--container:hover .circle--teacher_description {
+  transform: translateY(120%);
+}
+
+.logo-container {
+  margin: 0;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  align-content: center;
+  transition: transform 0.2s ease-in-out;
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meet img {
+  transition: all 0.3s ease-in-out;
+}
+
+.classroom {
+  top: 137px;
+}
+.classroom img {
+  transition: all 0.3s ease-in-out;
+}
+
+.circle--container:hover .logo-container {
+  transform: rotateZ(45deg) translate(10px, 10px);
+}
+
+.ghost-for-meet {
+  top: 137px;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  z-index: 6;
+  border-radius: 0 0 137px 137px;
+  /* outline: 5px solid red; */
+}
+
+.circle--superior {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 274px;
+  height: 50%;
+  z-index: 3;
+  background-color: #255573;
+  border-radius: 137px 137px 0 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.circle--inferior {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 274px;
+  height: 50%;
+  z-index: 3;
+  top: 137px;
+  background-color: #2A6E9E;
+  border-radius: 0 0 137px 137px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Para anmimar la parte superior */
+.meet:hover {
+  transform: translateY(25px);
+  z-index: 7;
+}
+
+.meet:hover ~ .circle--superior {
+  transform: translateY(25px);
+  z-index: 4;
+}
+
+.meet:hover img {
+  transform: translate(40px, -5px) scale(1.2);
+}
+
+.meet:hover ~ .circle--inferior {
+  transform: scale(0.7);
+}
+
+.meet:hover ~ .classroom img {
+  transform: scale(0.7);
+  filter: blur(4px);
+}
+
+.meet:hover .button-for-meet {
+  opacity: 1;
+  transform: translate(-20px, 90px) scale(1);
+}
+
+/*Para animar la parte inferior*/
+.ghost-for-meet:hover {
+  transform: translateY(-25px);
+}
+
+.ghost-for-meet:hover ~ .meet img {
+  transform: scale(0.7);
+  filter: blur(4px);
+}
+
+.ghost-for-meet:hover ~ .circle--inferior {
+  transform: translateY(-25px);
+  z-index: 4;
+}
+
+.ghost-for-meet:hover ~ .classroom img {
+  transform: translate(-40px, 5px) scale(1.2);
+}
+
+.ghost-for-meet:hover ~ .circle--superior {
+  transform: scale(0.7);
+}
+
+.ghost-for-meet:hover .button-for-clasroom {
+  opacity: 1;
+  transform: rotateZ(45deg) translate(109px, -101px) scale(1);
+}
+
+/* .button-for-clasroom:hover ~ .circle--inferior{
+    transform: translateY(0);
+}
+.button-for-clasroom:hover ~ .classroom img{
+    transform: translateY(0);
+} */
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 201px;
+  height: 48px;
+  top: 25px;
+  border-radius: 20px;
+  background-color: #EFF3F5;
+  font-size: 20px;
+}
+.button span {
+  display: inline-block;
+  text-align: center;
+}
+
+.button-for-meet {
+  width: 95px;
+  height: 40px;
+  background-color: #5C5560;
+  color: #EFF3F5;
+  transform: translate(-20px, 90px) scale(0);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-for-clasroom {
+  width: 95px;
+  height: 40px;
+  background-color: #5C5560;
+  color: #EFF3F5;
+  transform: translate(-20px, 90px) scale(0);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  transform: translate(109px, -101px) scale(0);
+}
+
+.button a {
+  text-decoration: none;
+  color: #EFF3F5;
+}
+
+.button:hover a {
+  color: #5C5560;
+}
+
+.button-for-meet:hover, .button-for-clasroom:hover {
+  background-color: #EFF3F5;
+  color: #5C5560;
+}
+
+.grid-master {
+  padding-top: 10px;
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  row-gap: 10px;
+}
+
+/*# sourceMappingURL=main.css.map */
