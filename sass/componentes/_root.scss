@@ -10,6 +10,12 @@ $button-background-secondary: #EFF3F5;
 
 $circle-space: 280px;
 
+@mixin all-flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @mixin circle-flex {
     display: flex;
     justify-content: center;

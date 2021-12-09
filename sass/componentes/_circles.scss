@@ -1,24 +1,33 @@
+// Como se ve en el HTML los círculos son un sistema de superposicionamiento que se va descubriendo a medida que se interactúa con el elemento en cuestión
+
+// Contenedor principal de cada círculo
 .circle--container{
     width: $circle-space;
     height: $circle-space;
-    /* border-radius: 50%; */
-    /* outline: 1px solid red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include all-flex-center;
 }
+// Segundo contenedor principal de cada círculo
 .circle{
-    width: 274px;
-    height: 274px;
+    width: $circle-space - 6;
+    height: $circle-space - 6;
     border-radius: 50%;
-    overflow: hidden;
-    // background-color: #1B2831;
-    transition: transform .2s ease-out;
     position: relative;
+    overflow: hidden;
+    transition: transform .2s ease-out;
 }
+    // Primera rotación
 .circle--container:hover .circle{
     transform: rotateZ(-45deg);
 }
+    // Primer subcirculo desaparece ante el hover
+.circle--container:hover .circle--teacher{
+    transform: translateY(-120%);
+}
+    // Segundo subcirculo desaparece ante el hover
+.circle--container:hover .circle--teacher_description{
+    transform: translateY(120%);
+}
+// Primer sub-círculo superior
 .circle--teacher{
     width: 100%;
     height: 50%;
@@ -28,32 +37,28 @@
     z-index: 8;
     figure{
         margin: 0 auto;
-    width: 131px;
-    height: 131px;
+        width: $circle-space/2;
+        height: $circle-space/2;
     }
     img{
         transform: translateY(10px); 
-        width: 131px;
-        height: 131px;
+        width: 100%;
+        height: 100%;
     }
 }
-.circle--container:hover .circle--teacher{
-    transform: translateY(-120%);
-}
+// Segundo sub-círculo superior
 .circle--teacher_description{
+    width: 100%;
+    height: 50%;
+    background-color: $circle-main-color;
     display: flex;
     justify-content: center; 
     position: absolute;
-    width: 100%;
-    height: 50%;
-    top: 137px;
-    background-color: $circle-main-color;
+    top: $circle-space/2;
     transition: transform .5s ease-out .2s;
     z-index: 8;
 }
-.circle--container:hover .circle--teacher_description{
-    transform: translateY(120%);
-}
+// Tras la primera revelación suceden estos elementos
 .logo-container{
     margin: 0;
     width: 100%;
@@ -63,22 +68,23 @@
     transition: transform .2s ease-in-out;
     position: absolute;
     z-index: 5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include all-flex-center;
 }
+// meet y classroom son las clases que comparte elemento con logo-container
 .meet img{
     transition: all .3s ease-in-out;
 }
 .classroom{
-    top: 137px;
+    top: $circle-space/2;
     img{
         transition: all .3s ease-in-out;
     }
 }
+
 .circle--container:hover .logo-container {
     transform: rotateZ(45deg) translate(10px, 10px);
-}   
+}
+   
 .ghost-for-meet{
     top: 137px;
     position: absolute;
@@ -146,45 +152,5 @@
     opacity: 1;
     transform: rotateZ(45deg) translate(109px, -101px) scale(1);
 }
-/* .button-for-clasroom:hover ~ .circle--inferior{
-    transform: translateY(0);
-}
-.button-for-clasroom:hover ~ .classroom img{
-    transform: translateY(0);
-} */
-.button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 201px;
-    height: 48px;
-    top: 25px;
-    border-radius: 20px;
-    background-color: $tittle-color;
-    font-size: 20px;
-    span{
-        display: inline-block;
-        text-align: center;
-    }
-    
-}   
 
-.button-for-meet{
-    @include inside-buttons;
-}
-.button-for-clasroom{
-    @include inside-buttons;
-    transform:translate(109px, -101px) scale(0);
-}
-.button a{
-    text-decoration: none;
-    color: $tittle-color;
-}
-.button:hover a{
-    color: $button-background-primary;
-}
-.button-for-meet:hover, .button-for-clasroom:hover{
-    background-color: #EFF3F5;
-    color: #5C5560;
-}
+
