@@ -267,14 +267,14 @@ body {
 }
 
 .grid-master {
-  padding-top: 10px;
   width: 80%;
   margin: 0 auto;
+  padding-top: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  row-gap: 10px;
   justify-items: center;
   align-items: center;
-  row-gap: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

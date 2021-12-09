@@ -1,0 +1,35 @@
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 201px;
+    height: 48px;
+    top: 25px;
+    border-radius: 20px;
+    background-color: $tittle-color;
+    font-size: 20px;
+    span{
+        display: inline-block;
+        text-align: center;
+    }   
+}   
+
+.button-for-meet{
+    @include inside-buttons;
+}
+.button-for-clasroom{
+    @include inside-buttons;
+    transform:translate(109px, -101px) scale(0);
+}
+.button a{
+    text-decoration: none;
+    color: $tittle-color;
+}
+.button:hover a{
+    color: $button-background-primary;
+}
+.button-for-meet:hover, .button-for-clasroom:hover{
+    background-color: #EFF3F5;
+    color: #5C5560;
+}
