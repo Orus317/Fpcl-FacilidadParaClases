@@ -8,6 +8,27 @@ body {
   background-color: #1B2831;
 }
 
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1B2831;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #255573;
+  border-radius: 15px 15px 15px 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2A6E9E;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #0B7BCB;
+}
+
 .top-bar {
   width: 100%;
   height: 100px;
@@ -86,6 +107,7 @@ body {
 .circle--container {
   width: 280px;
   height: 280px;
+  will-change: contents;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,6 +117,7 @@ body {
   width: 274px;
   height: 274px;
   border-radius: 50%;
+  will-change: transform;
   position: relative;
   overflow: hidden;
   transition: transform 0.2s ease-out;
@@ -110,6 +133,10 @@ body {
 
 .circle--container:hover .circle--teacher_description {
   transform: translateY(120%);
+}
+
+.circle--container:hover .logo-container {
+  transform: rotateZ(45deg) translate(10px, 10px);
 }
 
 .circle--teacher {
@@ -147,6 +174,7 @@ body {
   margin: 0;
   width: 100%;
   height: 50%;
+  will-change: transform;
   text-align: center;
   align-content: center;
   transition: transform 0.2s ease-in-out;
@@ -166,10 +194,6 @@ body {
 }
 .classroom img {
   transition: all 0.3s ease-in-out;
-}
-
-.circle--container:hover .logo-container {
-  transform: rotateZ(45deg) translate(10px, 10px);
 }
 
 .ghost-for-meet {
@@ -209,7 +233,6 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-/* Para anmimar la parte superior */
 .meet:hover {
   transform: translateY(25px);
   z-index: 7;
@@ -238,7 +261,6 @@ body {
   transform: translate(-20px, 90px) scale(1);
 }
 
-/*Para animar la parte inferior*/
 .ghost-for-meet:hover {
   transform: translateY(-25px);
 }

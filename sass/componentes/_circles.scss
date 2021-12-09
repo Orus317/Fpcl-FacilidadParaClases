@@ -4,6 +4,7 @@
 .circle--container{
     width: $circle-space;
     height: $circle-space;
+    will-change: contents;
     @include all-flex-center;
 }
 // Segundo contenedor principal de cada círculo
@@ -11,21 +12,26 @@
     width: $circle-space - 6;
     height: $circle-space - 6;
     border-radius: 50%;
+    will-change: transform;
     position: relative;
     overflow: hidden;
     transition: transform .2s ease-out;
 }
-    // Primera rotación
+// Primera rotación
 .circle--container:hover .circle{
     transform: rotateZ(-45deg);
 }
-    // Primer subcirculo desaparece ante el hover
+// Primer subcirculo desaparece ante el hover
 .circle--container:hover .circle--teacher{
     transform: translateY(-120%);
 }
-    // Segundo subcirculo desaparece ante el hover
+// Segundo subcirculo desaparece ante el hover
 .circle--container:hover .circle--teacher_description{
     transform: translateY(120%);
+}
+// 
+.circle--container:hover .logo-container {
+    transform: rotateZ(45deg) translate(10px, 10px);
 }
 // Primer sub-círculo superior
 .circle--teacher{
@@ -63,6 +69,7 @@
     margin: 0;
     width: 100%;
     height: 50%;
+    will-change: transform;
     text-align: center;
     align-content: center;
     transition: transform .2s ease-in-out;
@@ -81,10 +88,7 @@
     }
 }
 
-.circle--container:hover .logo-container {
-    transform: rotateZ(45deg) translate(10px, 10px);
-}
-   
+// Caja fantasma para disparar la animación del círculo superior, dado que este está declarado previamente y no se logrará el efecto de otra forma
 .ghost-for-meet{
     top: 137px;
     position: absolute;
@@ -94,12 +98,14 @@
     border-radius:  0 0 137px 137px;
     /* outline: 5px solid red; */
 }
+// Caja superior [esta no contiene el boton ya que si lo hiciera arruinaría el propósito de la caja fantasma]
 .circle--superior{
     @include circle-flex;
     background-color: $circle-main-color;
     border-radius: 137px 137px 0 0;
     transition: transform .3s ease-in-out;
 }
+// Caja inferior que sí contiene un botón
 .circle--inferior{
     @include circle-flex;
     top: 137px;
@@ -107,7 +113,7 @@
     border-radius:  0 0 137px 137px;
     transition: all .3s ease-in-out;
 }
-/* Para anmimar la parte superior */
+// Para anmimar la parte superior -> desenfoque, disminución de tamaño en el logo y el contenedor alterno
 .meet:hover{
     transform: translateY(25px);
     z-index: 7;
@@ -130,7 +136,7 @@
     opacity: 1;
     transform: translate(-20px, 90px) scale(1);
 }
-/*Para animar la parte inferior*/
+// Para anmimar la parte inferior -> -> desenfoque, disminución de tamaño en el logo y el contenedor alterno
 .ghost-for-meet:hover{
     transform: translateY(-25px);
 }
