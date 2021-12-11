@@ -3,7 +3,7 @@ mixin master_element(course_name,link_of_meet, link_of_classroom)
         .circle
             .circle--teacher 
                 figure
-                    img(src="../../assets/shadow.png", alt="Foto del profesor o del curso")
+                    img(src="assets/shadow.png", alt="Foto del profesor o del curso")
             .circle--teacher_description
                 .button
                     span #{course_name}
@@ -11,11 +11,11 @@ mixin master_element(course_name,link_of_meet, link_of_classroom)
                 .button(class="button-for-clasroom")
                     a(href=link_of_classroom target="_blank") Entrar
             .logo-container(class="meet")
-                img(src="../../assets/meet-logo.png", alt="Logo del aplicativo meet de google")
+                img(src="assets/meet-logo.png", alt="Logo del aplicativo meet de google")
                 .button(class="button-for-meet")
                     a(href=link_of_meet target="_blank") Entrar
             .logo-container(class="classroom")
-                img(src="../../assets/classroom-logo.png", alt="Logo del aplicativo Classroom de Google") 
+                img(src="assets/classroom-logo.png", alt="Logo del aplicativo Classroom de Google") 
             .circle--superior 
             .circle--inferior    
 
@@ -29,7 +29,7 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet")
-        link(rel="stylesheet", href="../../sass/main.css")
+        link(rel="stylesheet", href="sass/main.css")
         title FpCL
     body 
         include top_bar.pug
