@@ -4,7 +4,6 @@
 .circle--container{
     width: $circle-space;
     height: $circle-space;
-    will-change: contents;
     @include all-flex-center;
 }
 // Segundo contenedor principal de cada círculo
@@ -32,6 +31,19 @@
 // 
 .circle--container:hover .logo-container {
     transform: rotateZ(45deg) translate(10px, 10px);
+}
+//Para cuando la todo tenga opacity
+.circle--container.activate-sidebar-silence:hover .circle{
+    transform: rotateZ(0);
+}
+.circle--container.activate-sidebar-silence:hover .circle--teacher{
+    transform: translateY(0);
+}
+.circle--container.activate-sidebar-silence:hover .circle--teacher_description{
+    transform: translateY(0);
+}
+.circle--container.activate-sidebar-silence:hover .logo-container {
+    transform: rotateZ(0) translate(0, 0);
 }
 // Primer sub-círculo superior
 .circle--teacher{

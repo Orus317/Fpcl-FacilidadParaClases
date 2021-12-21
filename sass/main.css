@@ -52,6 +52,71 @@ body {
   transform: translateX(-10px);
 }
 
+header.active-sidebar-opactiy-else {
+  opacity: 0.5;
+  transition: opacity 500ms ease-in-out;
+}
+
+.sidebar-container {
+  position: fixed;
+  width: 217px;
+  height: 100vh;
+  top: 0;
+  background-color: #2A3B47;
+  transform: translateX(-217px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.active-sidebar-movement {
+  transform: translateX(0);
+}
+
+aside.active-modal {
+  width: 100%;
+  height: 100vh;
+}
+
+.sidebar-btn__container {
+  width: 35px;
+  height: 44px;
+  left: 100%;
+  top: calc(50% - 22px);
+  position: absolute;
+  border-radius: 0 20px 20px 0;
+  background-color: #2A3B47;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-btn__container:hover {
+  cursor: pointer;
+}
+
+.sidebar-btn {
+  transition: transform 200ms ease;
+}
+
+.sidebar-btn__container .active-sidebar-btn {
+  transform: rotateZ(180deg);
+}
+
+.grid-master {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+
+.grid-master.active-sidebar-opactiy-else {
+  opacity: 0.5;
+  transition: opacity 500ms ease-in-out;
+}
+
 .button {
   display: flex;
   justify-content: center;
@@ -107,7 +172,6 @@ body {
 .circle--container {
   width: 280px;
   height: 280px;
-  will-change: contents;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,6 +201,22 @@ body {
 
 .circle--container:hover .logo-container {
   transform: rotateZ(45deg) translate(10px, 10px);
+}
+
+.circle--container.activate-sidebar-silence:hover .circle {
+  transform: rotateZ(0);
+}
+
+.circle--container.activate-sidebar-silence:hover .circle--teacher {
+  transform: translateY(0);
+}
+
+.circle--container.activate-sidebar-silence:hover .circle--teacher_description {
+  transform: translateY(0);
+}
+
+.circle--container.activate-sidebar-silence:hover .logo-container {
+  transform: rotateZ(0) translate(0, 0);
 }
 
 .circle--teacher {
@@ -286,17 +366,6 @@ body {
 .ghost-for-meet:hover .button-for-clasroom {
   opacity: 1;
   transform: rotateZ(45deg) translate(109px, -101px) scale(1);
-}
-
-.grid-master {
-  width: 80%;
-  margin: 0 auto;
-  padding-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 10px;
-  justify-items: center;
-  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -8,3 +8,7 @@
     justify-items: center;
     align-items: center;
 }
+
+.grid-master.active-sidebar-opactiy-else{
+    @include opacity-element;
+}

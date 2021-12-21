@@ -10,15 +10,15 @@
     <link rel="stylesheet" href="sass/main.css">
     <title>FpCL</title>
   </head>
-  <body> 
-    <header>
+  <body>
+    <header id="top_bar__container">
       <nav class="top-bar">
         <figure class="top-bar__school"> <img src="assets/escudo_facultad.png" alt="Escudo de la escuela de Ingeniería Informática y de Sistemas"></figure>
         <p class="top-bar__greeting">Hola! ¿Listo para entrar a clases?</p>
         <figure class="top-bar__university"> <img class="ss" src="assets/escudo_unsaac.png" alt="Escudo de la UNSAAC"></figure>
       </nav>
     </header>
-    <main class="grid-master">
+    <main class="grid-master" id="main_grid">
       <div class="circle--container">
         <div class="circle">
           <div class="circle--teacher"> 
@@ -172,6 +172,14 @@
         </div>
       </div>
     </main>
+    <aside>
+      <section class="sidebar-container"> 
+        <figure class="sidebar-btn__container" id="sidebar-btn">
+          <div class="sidebar-btn"><img src="assets/arrow.png"></div>
+        </figure>
+        <div class="sidebar__content"></div>
+      </section>
+    </aside>
     <script src="scripts/main.js"> </script>
   </body>
 </html>

@@ -1,0 +1,41 @@
+.sidebar-container{
+    position: fixed;
+    width: 217px;
+    height: 100vh;
+    top: 0;
+    background-color: $bacground-aside-color;
+    transform: translateX(-217px);
+    transition: transform .3s ease-in-out; 
+}
+.active-sidebar-movement{
+    transform: translateX(0);
+}
+
+aside.active-modal{
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar-btn__container{
+    width: 35px;
+    height: 44px;
+    left: 100%;  
+    top: calc(50% - 22px);
+    position: absolute;
+    border-radius: 0 20px 20px 0;
+    background-color: $bacground-aside-color;  
+    @include all-flex-center;
+}
+
+.sidebar-btn__container:hover{
+    cursor: pointer;
+}
+
+.sidebar-btn{
+   transition: transform 200ms ease;
+}
+
+// Clase togle para el boton via JS
+.sidebar-btn__container .active-sidebar-btn{
+    transform: rotateZ(180deg);
+}
