@@ -6,6 +6,9 @@
     background-color: $bacground-aside-color;
     transform: translateX(-217px);
     transition: transform .3s ease-in-out; 
+    .sidebar__content{
+        
+    }
 }
 .active-sidebar-movement{
     transform: translateX(0);
@@ -39,3 +42,4 @@ aside.active-modal{
 .sidebar-btn__container .active-sidebar-btn{
     transform: rotateZ(180deg);
 }
+
