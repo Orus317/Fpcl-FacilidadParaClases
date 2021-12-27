@@ -1,3 +1,4 @@
+@use "sass:math";
 // Como se ve en el HTML los círculos son un sistema de superposicionamiento que se va descubriendo a medida que se interactúa con el elemento en cuestión
 
 // Contenedor principal de cada círculo
@@ -55,8 +56,8 @@
     z-index: 8;
     figure{
         margin: 0 auto;
-        width: $circle-space/2;
-        height: $circle-space/2;
+        width: math.div($circle-space , 2);
+        height: math.div($circle-space , 2);
     }
     img{
         transform: translateY(10px); 
@@ -72,7 +73,7 @@
     display: flex;
     justify-content: center; 
     position: absolute;
-    top: $circle-space/2;
+    top: math.div($circle-space , 2);
     transition: transform .5s ease-out .2s;
     z-index: 8;
 }
@@ -94,7 +95,7 @@
     transition: all .3s ease-in-out;
 }
 .classroom{
-    top: $circle-space/2;
+    top: math.div($circle-space,2);
     img{
         transition: all .3s ease-in-out;
     }

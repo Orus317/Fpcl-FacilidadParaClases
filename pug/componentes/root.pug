@@ -1,3 +1,5 @@
+-var app_names = ["Mail_Logo.png", "Github_logo.png", "Drive_Logo.png", "Dropbox-logo.png"]
+
 mixin master_element(course_name,link_of_meet, link_of_classroom)
     .circle--container
         .circle
@@ -19,6 +21,8 @@ mixin master_element(course_name,link_of_meet, link_of_classroom)
             .circle--superior 
             .circle--inferior    
 
+mixin app-container(app_src)
+    img(src="assets/"+app_src , alt=app_src)
 
 doctype html
 html(lang="en")

@@ -1,14 +1,13 @@
+@use "sass:math";
+
 .sidebar-container{
     position: fixed;
     width: 217px;
-    height: 100vh;
+    height: 100%;
     top: 0;
     background-color: $bacground-aside-color;
     transform: translateX(-217px);
     transition: transform .3s ease-in-out; 
-    .sidebar__content{
-        
-    }
 }
 .active-sidebar-movement{
     transform: translateX(0);
@@ -41,5 +40,58 @@ aside.active-modal{
 // Clase togle para el boton via JS
 .sidebar-btn__container .active-sidebar-btn{
     transform: rotateZ(180deg);
+}
+
+.sidebar__content{
+    padding: 0 15px 0;
+    height: 100%;
+    overflow-y: auto;
+    &::-webkit-scrollbar{
+        width: .5em;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: get-opacity($bacground-aside-color,1);
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: get-opacity(#FFF, 0);
+        border: 1px solid get-opacity($paragraph-color, .5);
+    }
+    &::-webkit-scrollbar-thumb:active{
+        border: 1px solid get-opacity($paragraph-color, 1);
+    }
+    h4{
+        padding: 10px 0;
+        border-bottom: 2px solid $paragraph-color;
+    }
+    h4:nth-last-child(1){
+        border: 0;
+    }
+    .content__circle{
+        @include all-flex-center;
+        width: math.div($circle-space,1.75);
+        height: math.div($circle-space,1.75);
+        background-color: $cirlce-secondary-color;
+        border-radius: 50%;
+        transform: translate(8%,0);
+        img{
+            width: 123px;
+            height: 125px;
+        }
+    }
+    .content__profile--education-place{
+        p{
+            color: $paragraph-color;
+        }
+    }    
+    .content__profile--aplications{
+        @include all-flex-center;
+        flex-direction: column;
+        img{
+            width: 51px;
+            height: 51px;
+            margin-top: 38px;
+        }
+    }
+    
 }
 

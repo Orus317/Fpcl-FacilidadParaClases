@@ -1,3 +1,19 @@
+h1 {
+  color: #EFF3F5;
+  font-size: 2.1875rem;
+  line-height: 3.28125rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+h4 {
+  color: #EFF3F5;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-weight: bold;
+  text-align: center;
+}
+
 * {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -33,7 +49,6 @@ body {
   width: 100%;
   height: 100px;
   background-color: #23333F;
-  color: #EFF3F5;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,11 +56,6 @@ body {
 .top-bar__school img {
   width: 95px;
   height: 95px;
-}
-.top-bar__greeting {
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  font-size: 35px;
 }
 .top-bar__university img {
   height: 90px;
@@ -60,12 +70,13 @@ header.active-sidebar-opactiy-else {
 .sidebar-container {
   position: fixed;
   width: 217px;
-  height: 100vh;
+  height: 100%;
   top: 0;
   background-color: #2A3B47;
   transform: translateX(-217px);
   transition: transform 0.3s ease-in-out;
 }
+
 .active-sidebar-movement {
   transform: translateX(0);
 }
@@ -98,6 +109,60 @@ aside.active-modal {
 
 .sidebar-btn__container .active-sidebar-btn {
   transform: rotateZ(180deg);
+}
+
+.sidebar__content {
+  padding: 0 15px 0;
+  height: 100%;
+  overflow-y: auto;
+}
+.sidebar__content::-webkit-scrollbar {
+  width: 0.5em;
+}
+.sidebar__content::-webkit-scrollbar-track {
+  background-color: #2a3b47;
+}
+.sidebar__content::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(160, 167, 172, 0.5);
+}
+.sidebar__content::-webkit-scrollbar-thumb:active {
+  border: 1px solid #a0a7ac;
+}
+.sidebar__content h4 {
+  padding: 10px 0;
+  border-bottom: 2px solid #A0A7AC;
+}
+.sidebar__content h4:nth-last-child(1) {
+  border: 0;
+}
+.sidebar__content .content__circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  background-color: #2A6E9E;
+  border-radius: 50%;
+  transform: translate(8%, 0);
+}
+.sidebar__content .content__circle img {
+  width: 123px;
+  height: 125px;
+}
+.sidebar__content .content__profile--education-place p {
+  color: #A0A7AC;
+}
+.sidebar__content .content__profile--aplications {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sidebar__content .content__profile--aplications img {
+  width: 51px;
+  height: 51px;
+  margin-top: 38px;
 }
 
 .grid-master {

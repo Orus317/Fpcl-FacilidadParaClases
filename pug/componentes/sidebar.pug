@@ -9,7 +9,9 @@ aside
             h4.content__profile--user Palacios Durand Oriol Fernando
             h4.content__profile--education-place UNSAAC
                 p Universidad Nacional San Antonio Abad del Cusco
-            h4.content__profile--aplications 
+            h4.content__profile--aplications Aplicaciones
+                each app in app_names 
+                    +app-container(app)
                 //- Usar un for para crear circulos y los logos inside
  
         //-evaluar circle-teacher

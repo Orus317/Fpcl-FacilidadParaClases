@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $background-color: #1B2831;
 $background-top_bar-color: #23333F;
 $bacground-aside-color: #2A3B47;
@@ -11,9 +13,12 @@ $button-background-secondary: #EFF3F5;
 
 $circle-space: 280px;
 
+$h1-size: 35px;
+$h4-size: 20px;
+$paragraph-size: 18px;
 
 @function calculateRem($size){
-    $remSize: $size / 16px;
+    $remSize: math.div($size, 16px);
     @return $remSize * 1rem;
 }
 
@@ -26,13 +31,14 @@ $circle-space: 280px;
     line-height: calculateRem($size)*1.5;	
 }
 
-// @each $header, $size in (h1: 30px, h2: 25px){
-//     #{$header}{
-//         color: get-opacity(blanchedalmond, .5);
-//         @include font-size($size);
-//     }
-// }
-
+@each $header, $size in (h1: $h1-size, h4: $h4-size){
+    #{$header}{
+        color: $tittle-color;
+        @include font-size($size);
+        font-weight: bold;
+        text-align: center;
+    }    
+}
 
 
 @mixin all-flex-center{
