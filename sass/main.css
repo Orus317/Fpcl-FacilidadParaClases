@@ -159,10 +159,12 @@ aside.active-modal {
   align-items: center;
   flex-direction: column;
 }
+.sidebar__content .content__profile--aplications a {
+  margin-top: 38px;
+}
 .sidebar__content .content__profile--aplications img {
   width: 51px;
   height: 51px;
-  margin-top: 38px;
 }
 
 .grid-master {

@@ -10,11 +10,7 @@ aside
             h4.content__profile--education-place UNSAAC
                 p Universidad Nacional San Antonio Abad del Cusco
             h4.content__profile--aplications Aplicaciones
-                each app in app_names 
-                    +app-container(app)
-                //- Usar un for para crear circulos y los logos inside
- 
-        //-evaluar circle-teacher
-        //- Usar ciclos de sass para titulos y nombres
-        //- crear nuevo mixin para los nuevos logotipos
+                each link, app in app_names 
+                    +app-container(app ,link)
+
     

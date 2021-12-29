@@ -1,4 +1,4 @@
--var app_names = ["Mail_Logo.png", "Github_logo.png", "Drive_Logo.png", "Dropbox-logo.png"]
+-var app_names = {"Mail_Logo.png": "https://mail.google.com/mail/u/0/#inbox", "Github_logo.png": "https://github.com/", "Drive_Logo.png":"https://drive.google.com/drive/my-drive", "Dropbox-logo.png":"https://www.dropbox.com/home"}
 
 mixin master_element(course_name,link_of_meet, link_of_classroom)
     .circle--container
@@ -21,8 +21,12 @@ mixin master_element(course_name,link_of_meet, link_of_classroom)
             .circle--superior 
             .circle--inferior    
 
-mixin app-container(app_src)
-    img(src="assets/"+app_src , alt=app_src)
+mixin app-container(app_src, link)
+    a(href=link) 
+        img(src="assets/"+app_src , alt=app_src)    
+
+
+
 
 doctype html
 html(lang="en")

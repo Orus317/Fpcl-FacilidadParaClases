@@ -86,10 +86,12 @@ aside.active-modal{
     .content__profile--aplications{
         @include all-flex-center;
         flex-direction: column;
+        a{
+            margin-top: 38px;
+        }
         img{
             width: 51px;
             height: 51px;
-            margin-top: 38px;
         }
     }
     
